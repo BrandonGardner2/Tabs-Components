@@ -45,7 +45,7 @@ body {
   .carousel {
     display: flex;
     align-items: center;
-    max-height: 600px;
+    height: 600px;
     width: 100%;
     position: relative;
 
@@ -53,13 +53,19 @@ body {
       position: relative;
       flex: 1;
       overflow: hidden;
+      height: 100%;
+      width: 100%;
     }
 
     .carousel-img {
+      position: absolute;
       transition: transform 1s;
+      width: 100%;
+      height: 100%;
       img {
+        position: relative;
         height: 100%;
-        transform: translateY(-100px);
+        // transform: translateY(-100px);
         width: 100%;
       }
 
@@ -74,12 +80,6 @@ body {
       }
       &.fourth {
         left: 300%;
-      }
-    }
-
-    .llama {
-      img {
-        transform: translateY(-300px);
       }
     }
   }
