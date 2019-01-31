@@ -116,11 +116,19 @@ body {
   border-radius: 10px;
   overflow: hidden;
 }
-.section .box {
-  padding: 40px;
+.section .last,
+.section .next {
+  background: lightgray;
+  cursor: pointer;
 }
-.section .box .box-title {
-  font-size: 24px;
-  padding-bottom: 10px;
-  font-weight: bold;
+.section .carousel {
+  max-height: 600px;
+  width: 100%;
+}
+.section .carousel .carousel-img img {
+  transform: translateY(-135px);
+  width: 100%;
+}
+.section .carousel .llama img {
+  transform: translateY(-500px);
 }
