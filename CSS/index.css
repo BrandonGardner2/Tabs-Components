@@ -115,6 +115,7 @@ body {
   box-shadow: 1px 1px 5px #931d25;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
 }
 .section .last,
 .section .next {
@@ -122,13 +123,34 @@ body {
   cursor: pointer;
 }
 .section .carousel {
+  display: flex;
+  align-items: center;
   max-height: 600px;
   width: 100%;
+  position: relative;
+}
+.section .carousel .carousel-items {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
 }
 .section .carousel .carousel-img img {
+  height: 100%;
   transform: translateY(-135px);
   width: 100%;
 }
+.section .carousel .carousel-img.first {
+  left: 0;
+}
+.section .carousel .carousel-img.second {
+  left: 100%;
+}
+.section .carousel .carousel-img.third {
+  left: 200%;
+}
+.section .carousel .carousel-img.third {
+  left: 300%;
+}
 .section .carousel .llama img {
-  transform: translateY(-500px);
+  transform: translateY(-300px);
 }

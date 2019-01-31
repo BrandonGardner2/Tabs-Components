@@ -9,7 +9,11 @@ window.onload = function() {
   lastSlide.addEventListener("click", e => {
     e.preventDefault();
     carouselCount -= 100;
-    //more stuff here
+    slide();
+    if (e.type !== "autoClick") {
+      clearInterval(scrollInterval);
+      scrollInterval = setInterval(autoScroll(), interval);
+    }
   });
 
   nextSlide.addEventListener("click", e => slideEvent(e));
@@ -18,7 +22,11 @@ window.onload = function() {
   const slideEvent = e => {
     e.preventDefault();
     carouselCount += 100;
-    //more stuff here
+    slide();
+    if (e.type !== "autoClick") {
+      clearInterval(scrollInterval);
+      scrollInterval = setInterval(autoScroll(), interval);
+    }
   };
 
   const slide = () => {
@@ -26,7 +34,7 @@ window.onload = function() {
       case -100:
         ccarouselCount = 0;
         break;
-      case 300:
+      case 400:
         carouselCount = 0;
         break;
       default:

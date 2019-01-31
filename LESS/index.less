@@ -35,6 +35,7 @@ body {
   box-shadow: 1px 1px 5px @lambda-red;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
 
   .last,
   .next {
@@ -42,19 +43,42 @@ body {
     cursor: pointer;
   }
   .carousel {
+    display: flex;
+    align-items: center;
     max-height: 600px;
     width: 100%;
+    position: relative;
+
+    .carousel-items {
+      position: relative;
+      flex: 1;
+      overflow: hidden;
+    }
 
     .carousel-img {
       img {
+        height: 100%;
         transform: translateY(-135px);
         width: 100%;
+      }
+
+      &.first {
+        left: 0;
+      }
+      &.second {
+        left: 100%;
+      }
+      &.third {
+        left: 200%;
+      }
+      &.third {
+        left: 300%;
       }
     }
 
     .llama {
       img {
-        transform: translateY(-500px);
+        transform: translateY(-300px);
       }
     }
   }
