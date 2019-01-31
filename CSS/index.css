@@ -134,9 +134,12 @@ body {
   flex: 1;
   overflow: hidden;
 }
+.section .carousel .carousel-img {
+  transition: transform 1s;
+}
 .section .carousel .carousel-img img {
   height: 100%;
-  transform: translateY(-135px);
+  transform: translateY(-100px);
   width: 100%;
 }
 .section .carousel .carousel-img.first {
@@ -148,7 +151,7 @@ body {
 .section .carousel .carousel-img.third {
   left: 200%;
 }
-.section .carousel .carousel-img.third {
+.section .carousel .carousel-img.fourth {
   left: 300%;
 }
 .section .carousel .llama img {

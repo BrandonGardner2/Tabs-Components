@@ -6,33 +6,35 @@ window.onload = function() {
   let scrollInterval;
   let interval = 5000;
 
-  lastSlide.addEventListener("click", e => {
+  lastSlide.addEventListener("click", function(e) {
+    e = e || window.event;
     e.preventDefault();
     carouselCount -= 100;
     slide();
-    if (e.type !== "autoClick") {
+    if (e.type !== "autoSlide") {
       clearInterval(scrollInterval);
-      scrollInterval = setInterval(autoScroll(), interval);
+      scrollInterval = setInterval(autoScroll, interval);
     }
   });
 
-  nextSlide.addEventListener("click", e => slideEvent(e));
-  nextSlide.addEventListener("autoClick", e => slideEvent(e));
+  nextSlide.addEventListener("click", slideEvent);
+  nextSlide.addEventListener("autoSlide", slideEvent);
 
-  const slideEvent = e => {
+  function slideEvent(e) {
+    e = e || window.event;
     e.preventDefault();
     carouselCount += 100;
     slide();
-    if (e.type !== "autoClick") {
+    if (e.type !== "autoSlide") {
       clearInterval(scrollInterval);
-      scrollInterval = setInterval(autoScroll(), interval);
+      scrollInterval = setInterval(autoScroll, interval);
     }
-  };
+  }
 
-  const slide = () => {
+  function slide() {
     switch (carouselCount) {
       case -100:
-        ccarouselCount = 0;
+        carouselCount = 0;
         break;
       case 400:
         carouselCount = 0;
@@ -47,12 +49,12 @@ window.onload = function() {
         `transform: translateX(-${carouselCount}%)`
       );
     }
-  };
+  }
 
-  const autoClick = new Event("autoClick");
-  const autoScroll = () => {
-    nextSlide.dispatchEvent(autoClick);
-  };
+  const autoSlide = new Event("autoSlide");
+  function autoScroll() {
+    nextSlide.dispatchEvent(autoSlide);
+  }
 
   scrollInterval = setInterval(autoScroll, interval);
 };
