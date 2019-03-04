@@ -115,12 +115,47 @@ body {
   box-shadow: 1px 1px 5px #931d25;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
 }
-.section .box {
-  padding: 40px;
+.section .last,
+.section .next {
+  background: lightgray;
+  cursor: pointer;
 }
-.section .box .box-title {
-  font-size: 24px;
-  padding-bottom: 10px;
-  font-weight: bold;
+.section .carousel {
+  display: flex;
+  align-items: center;
+  height: 600px;
+  width: 100%;
+  position: relative;
+}
+.section .carousel .carousel-items {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+.section .carousel .carousel-img {
+  position: absolute;
+  transition: transform 1s;
+  width: 100%;
+  height: 100%;
+}
+.section .carousel .carousel-img img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.section .carousel .carousel-img.first {
+  left: 0;
+}
+.section .carousel .carousel-img.second {
+  left: 100%;
+}
+.section .carousel .carousel-img.third {
+  left: 200%;
+}
+.section .carousel .carousel-img.fourth {
+  left: 300%;
 }
